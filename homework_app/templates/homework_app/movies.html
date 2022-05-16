@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Title</td>
+        <td>Year</td>
+        <td>Director</td>
+        <td>Rating</td>
+    </tr>
+    <tbody>
+    {% for movie in movies %}
+    <tr>
+        <td><a href="/movie-details/{{movie.id}}/">{{ movie.title }}</a></td>
+        <td>{{ movie.year }}</td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.rating }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+    </thead>
+</table>
+
+</body>
+</html>

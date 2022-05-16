@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Scores</title>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Select a home team</p>
+    <select name="home_team" style="width:200px">
+        {% for key in teams %}
+        <option value="{{set_home}}" selected disabled hidden>{{set_home}}</option>
+        <option value='{{ key.id }}'>{{ key.name }}</option>
+        {% endfor %}
+    </select>
+    <p><input required type="number" name="home_score" placeholder="What was their score?"</p>
+    <p>Select an away team</p>
+    <select name="away_team" style="width:200px">
+        {% for key in teams %}
+        <option value='{{ key.id }}'>{{ key.name }}</option>
+        {% endfor %}
+    </select>
+    <p><input required type="number" name="away_score" placeholder="What was their score?"</p>
+    <p><input type="submit"></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show All Sessions</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Session Key</td>
+        <td>Session Value</td>
+    </tr>
+
+    <tr>
+        {% for key in temp_keys %}
+        <td> {{ key }}</td>
+        {% endfor %}
+
+        {% for value in temp_values %}
+        <td> {{ value }}</td>
+        {% endfor %}
+
+
+    </tr>
+
+    </thead>
+</table>
+</body>
+</html>

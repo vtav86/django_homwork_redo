@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>League Table</title>
+    <style>
+        table, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+
+        th {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Position</th>
+        <th>Club</th>
+        <th>Number of points</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for team in team_info %}
+    <tr {% if team.name == fav_team %} style='color:red;' {% endif %}>
+        <td>{{ forloop.counter }}</td>
+        <td><a href="/games-played/?teamid={{team.id}}">{{ team.name }}</a></td>
+        <td>{{ team.points }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

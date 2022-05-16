@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+<p>Sort by:</p><form method="POST" action="">{% csrf_token %}
+<p><input type="submit" name="ratedown" value="Rating Desc"></p>
+<p><input type="submit" name="rateup" value="Rating Asc"></p>
+<p><input type="submit" name="default" value="Default"></p>
+    </form>
+<table>
+    <thead>
+    <tr>
+        <td>Title</td>
+        <td>Starring</td>
+        <td>Year</td>
+        <td>Director</td>
+        <td>Rating</td>
+    </tr>
+    <tbody>
+    {% for movie in movies %}
+    <tr>
+        <td><a href="/movie-details/{{movie.id}}/">{{ movie.title }}</a></td>
+        <td>{{ movie.actors }}</td>
+        <td>{{ movie.year }}</td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.rating }}</td>
+        <td><a href="/edit-movie/{{movie.id}}/">Edit Movie</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+    </thead>
+</table>
+
+    <a href="/add-movie/">Add a New Movie</a>
+</body>
+</html>

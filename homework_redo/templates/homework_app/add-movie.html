@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Person</title>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p><input type="text" name="title" placeholder="Enter Movie Name"></p>
+    <p><input type="number" name="year" placeholder="Enter Movie Year"></p>
+    <p><input type="number" name="rating" placeholder="Enter Movie Rating"></p>
+    Select Director Details
+    <select name="director" >
+        {% for person in people %}
+        <option value="{{person.id}}">{{person}}</option>
+        {% endfor %}
+    </select>
+    <p>Select Writer Details
+        <select name="writer">
+            {% for person in people %}
+            <option value="{{person.id}}">{{person}}</option>
+            {% endfor %}
+        </select>
+    <p><a href="/add-person/">Add new person</a></p>
+    <br>
+        <input type="submit">
+
+
+</form>
+
+</body>
+</html>

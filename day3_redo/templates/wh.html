@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Width and Height</title>
+    <style>
+        table, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ccc
+        }
+
+        .header {
+            background-color: #ccc
+        }
+    </style>
+</head>
+<body>
+<table>
+
+    <tr>
+        <td class="header"></td>
+        {% for col in width %}
+        <td class="header">{{ col }}</td>
+        {% endfor %}
+    </tr>
+
+    {% for row in height %}
+    <tr>
+        <td class="header">{{ row }}</td>
+        {% for col in width %}
+        <td>{% widthratio col 1 row  %}</td>
+        {% endfor %}
+        {% endfor %}
+    </tr>
+
+</table>
+</body>
+</html>

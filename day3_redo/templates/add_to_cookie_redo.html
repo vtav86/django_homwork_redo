@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to cookie redo</title>
+</head>
+<body>
+<form action="#" method="POST">
+    {% csrf_token %}
+    <label>
+        Key:
+        <input type="text" name="key">
+    </label>
+    <label>
+        Value:
+        <input type="text" name="value">
+    </label>
+    <input type="submit" name="conversionType">
+</form>
+</body>
+</html>

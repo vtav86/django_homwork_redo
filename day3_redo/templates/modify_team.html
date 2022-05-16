@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Team</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="team_id" value="{{ team.id }}">
+        <p>Team: <input type="text" name="team_name" value="{{ team.name }}" required></p>
+        <p>Points: <input type="number" name="points" value="{{ team.points }}" required></p>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

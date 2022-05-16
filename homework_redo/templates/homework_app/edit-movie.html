@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Movie</title>
+</head>
+<body>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <p><input type="text" required name="title" placeholder="{{info.title}}"> - Movie Title</p>
+    <p><input type="text" required name="year" placeholder="{{info.year}}"> - Movie Year</p>
+    <p><input type="number" required name="rating" placeholder="{{info.rating}}"> - Movie Rating</p>
+    <p><input type="number" required name="director" placeholder="{{info.director_id}}"> - Movie Director</p>
+    <p><input type="number" required name="writer" placeholder="{{info.screenplay_id}}"> - Movie Writer</p>
+    <p><input type="hidden" name="movie_id" value="1"></p>
+<input type="submit">
+</form>
+
+</body>
+</html>

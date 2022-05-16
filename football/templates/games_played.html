@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games Played</title>
+    <style>
+        table, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+
+        th {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<h1>{{ teamobj }}</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <th>Name of Host Club</th>
+        <th>Goals by Host</th>
+        <th>Name of Visiting Club</th>
+        <th>Goals by Visitor</th>
+        <th>Total Score</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for game in total_games %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ game.team_home_id }}</td>
+        <td>{{ game.team_home_goals }}</td>
+        <td>{{ game.team_away_id }}</td>
+        <td>{{ game.team_away_goals }}</td>
+        <td>{{ game.team_home_goals|add:game.team_away_goals }}</td>
+
+    </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
